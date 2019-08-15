@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>ASD SRTU Demo 2</title></head>
+<head><title>ASD SRTU Demo 4</title></head>
 <body>
 
 <h2>Read data from ASD-3</h2>
@@ -9,23 +9,30 @@
 Data will show up here
 </div>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
+
+
 function loadDoc() {
   var headers = {
   'Accept':'application/json',
   'Authorization':'Bearer 8e7c264d4ff546848a4dca979ebd8dcf1d5d4da5'
+  }
 
-$.ajax({
+  $.ajax({
   url: 'https://api.nrfcloud.com/v1/messages',
   method: 'get',
-  data: '?inclusiveStart=2018-06-18T19%3A19%3A45.902Z&exclusiveEnd=2018-06-20T19%3A19%3A45.902Z',
+  data: 'inclusiveStart=2019-08-13T00:00:00.000Z&exclusiveEnd=2019-08-15T13:59:59.999Z',
+  //data: '',
   headers: headers,
   success: function(data) {
     document.getElementById("demo").innerHTML = JSON.stringify(data);
+    console.log(JSON.stringify(data));
   }
 })
 
-  
+}
 </script>
 
 </body>
