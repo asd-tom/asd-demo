@@ -1,10 +1,26 @@
+<!DOCTYPE html>
 <html>
-<head><title>ASD Demo</title></head>
-<body bgcolor="white">
-<center><h1>ASD SRTU-1 Demo page 2</h1></center>
+<head><title>ASD SRTU Demo</title></head>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">View messages</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
 
 </body>
 </html>
-
-<script async src="./index.js"></script>
-
