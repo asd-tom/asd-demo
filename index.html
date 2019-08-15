@@ -4,22 +4,14 @@
 <body>
 
 <div id="demo">
-<h2>The XMLHttpRequest Object</h2>
+<h2>Read data from ASD-3</h2>
 <button type="button" onclick="loadDoc()">View messages</button>
 </div>
 
 <script>
 function loadDoc() {
   document.getElementById("demo").innerHTML =
-  $.ajax({
-    url: 'https://api.nrfcloud.com/v1/messages',
-    method: 'get',
-    data: '?inclusiveStart=2018-06-18T19%3A19%3A45.902Z&exclusiveEnd=2018-06-20T19%3A19%3A45.902Z',
-    headers: headers,
-    success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
+"Test"
     }
   
 }
