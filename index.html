@@ -11,8 +11,21 @@ Data will show up here
 
 <script>
 function loadDoc() {
-  document.getElementById("demo").innerHTML = "Test";
-    }
+  var headers = {
+  'Accept':'application/json',
+  'Authorization':'Bearer 8e7c264d4ff546848a4dca979ebd8dcf1d5d4da5'
+
+$.ajax({
+  url: 'https://api.nrfcloud.com/v1/messages',
+  method: 'get',
+  data: '?inclusiveStart=2018-06-18T19%3A19%3A45.902Z&exclusiveEnd=2018-06-20T19%3A19%3A45.902Z',
+  headers: headers,
+  success: function(data) {
+    document.getElementById("demo").innerHTML = data;
+  }
+})
+
+  
 </script>
 
 </body>
