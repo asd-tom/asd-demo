@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>ASD SRTU Demo 1</title></head>
+<head><title>ASD SRTU Demo 2</title></head>
 <body>
 
 <h2>Read data from ASD-3</h2>
@@ -21,7 +21,7 @@ $.ajax({
   data: '?inclusiveStart=2018-06-18T19%3A19%3A45.902Z&exclusiveEnd=2018-06-20T19%3A19%3A45.902Z',
   headers: headers,
   success: function(data) {
-    document.getElementById("demo").innerHTML = data;
+    document.getElementById("demo").innerHTML = JSON.stringify(data);
   }
 })
 
